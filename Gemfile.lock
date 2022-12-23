@@ -1,0 +1,23 @@
+PATH
+  remote: .
+  specs:
+    family_tree (0.1.0)
+      tree_graph (~> 0.2.4)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.16.3)
+    rake (12.3.3)
+    tree_graph (0.2.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  family_tree!
+  minitest (~> 5.0)
+  rake (~> 12.0)
+
+BUNDLED WITH
+   2.1.4
