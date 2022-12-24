@@ -8,11 +8,14 @@ module FamilyTree
     attr_reader :klass, :descendants
 
     alias_method :label_for_tree_graph, :klass
-    alias_method :children_for_tree_graph, :descendants
 
     def initialize(klass)
       @klass = klass
       @descendants = []
+    end
+
+    def children_for_tree_graph
+      descendants.sort_by{ |d| d.klass.name }
     end
   end
 

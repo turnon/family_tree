@@ -20,6 +20,8 @@ class FamilyTreeTest < Minitest::Test
     prepend N
   end
 
+  class E < C; end
+
   def test_family_tree
     tree = <<~EOS
       BasicObject
@@ -27,9 +29,10 @@ class FamilyTreeTest < Minitest::Test
         ├─FamilyTreeTest::A
         └─FamilyTreeTest::B
           └─FamilyTreeTest::C
-            └─FamilyTreeTest::D
+            ├─FamilyTreeTest::D
+            └─FamilyTreeTest::E
     EOS
 
-    assert_equal tree.chomp, FamilyTree.graph([A, B, C, D, M])
+    assert_equal tree.chomp, FamilyTree.graph([A, B, C, E, D, M])
   end
 end
