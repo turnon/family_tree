@@ -26,9 +26,7 @@ module FamilyTree
       Array(klasses).each do |k|
         parent = root
 
-        if String === k
-          k = k.split('::').reduce(::Object){ |namespace, name| namespace.const_get(name) }
-        end
+        k = ::Object.const_get(k) if String === k
 
         k.ancestors.reverse_each do |a|
           next unless Class === a
