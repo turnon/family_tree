@@ -21,4 +21,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "tree_graph", "~> 0.2.4"
+  spec.add_dependency "tree_html", "~> 0.1.10"
 end
