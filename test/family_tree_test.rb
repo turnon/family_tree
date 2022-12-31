@@ -33,6 +33,6 @@ class FamilyTreeTest < Minitest::Test
             └─FamilyTreeTest::E
     EOS
 
-    assert_equal tree.chomp, FamilyTree.graph([A, B, C, E, D, M])
+    assert_equal tree.chomp, FamilyTree.graph([A, B, C, E, '::FamilyTreeTest::D', M])
   end
 end

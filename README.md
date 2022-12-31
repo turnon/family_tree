@@ -27,13 +27,31 @@ class A; end
 class B; end
 class C < B;end
 
-FamilyTree.graph([A, B, C])
-
+puts FamilyTree.graph([A, B, C])
 # BasicObject
 # └─Object
 #   ├─A
 #   └─B
 #     └─C
+```
+
+You can output to html
+
+```ruby
+File.open('abc-hierarchy.html', 'w') do |f|
+  f.puts FamilyTree.html([A, B, C])
+end
+```
+
+For private constant, pass full name in string
+
+```ruby
+module M
+  class K; end
+  private_constant :K
+end
+
+FamilyTree.graph(['M::K'])
 ```
 
 ## Development
